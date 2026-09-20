@@ -1,0 +1,355 @@
+
+/* ================================
+   GLOBAL STYLES
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+
+/* ================================
+   JOIN ROOM PAGE
+================================ */
+
+body:has(form) {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at top left, #1e3a8a 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #312e81 0%, transparent 35%),
+    #0f172a;
+}
+
+form {
+  width: 420px;
+  padding: 40px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #334155;
+  border-radius: 18px;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(59, 130, 246, 0.08);
+}
+
+form h1 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 30px;
+  color: #f8fafc;
+  letter-spacing: -0.5px;
+}
+
+form > div {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+form input {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #475569;
+  border-radius: 9px;
+  outline: none;
+  background: #1e293b;
+  color: #f8fafc;
+  transition: 0.2s ease;
+}
+
+form input::placeholder {
+  color: #64748b;
+}
+
+form input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+form button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+form button:active {
+  transform: translateY(0);
+}
+
+
+/* ================================
+   EDITOR PAGE
+================================ */
+
+.editor-page {
+  min-height: 100vh;
+  display: flex;
+  background: #0f172a;
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+  width: 280px;
+  min-height: 100vh;
+  padding: 24px 20px;
+  background: #111827;
+  border-right: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar h1:first-child {
+  font-size: 20px;
+  color: #f8fafc;
+  margin-bottom: 4px;
+}
+
+.sidebar h1:nth-child(2) {
+  font-size: 14px;
+  font-weight: 500;
+  color: #94a3b8;
+  word-break: break-all;
+  background: #1e293b;
+  padding: 11px;
+  border-radius: 8px;
+}
+
+
+/* ================================
+   SIDEBAR BUTTONS
+================================ */
+
+.sidebar button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.sidebar button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.sidebar button:last-child {
+  margin-top: auto;
+  background: #dc2626;
+}
+
+.sidebar button:last-child:hover {
+  background: #b91c1c;
+}
+
+
+/* ================================
+   COPY MESSAGE
+================================ */
+
+.copy-success {
+  color: #4ade80;
+  font-size: 13px;
+  text-align: center;
+  margin-top: -8px;
+  animation: fadeIn 0.2s ease;
+}
+
+
+/* ================================
+   USERS SECTION
+================================ */
+
+.sidebar h3 {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #cbd5e1;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.sidebar ul {
+  list-style: none;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.sidebar li {
+  padding: 9px 10px;
+  margin-bottom: 6px;
+  background: #1e293b;
+  border-radius: 7px;
+  color: #cbd5e1;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.sidebar li:hover {
+  background: #273449;
+  color: white;
+}
+
+
+/* ================================
+   TYPING INDICATOR
+================================ */
+
+.typing-indicator {
+  min-height: 20px;
+  color: #60a5fa;
+  font-size: 13px;
+  font-style: italic;
+}
+
+
+/* ================================
+   LANGUAGE SELECTOR
+================================ */
+
+.language-selector {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  outline: none;
+  background: #1e293b;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+.language-selector:focus {
+  border-color: #3b82f6;
+}
+
+.language-selector option {
+  background: #1e293b;
+  color: white;
+}
+
+
+/* ================================
+   EDITOR
+================================ */
+
+.editor-wrapper {
+  flex: 1;
+  padding: 24px;
+  min-width: 0;
+}
+
+.editor-wrapper > div {
+  border: 1px solid #334155;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ================================
+   SCROLLBAR
+================================ */
+
+.sidebar ul::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar ul::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+}
+
+
+/* ================================
+   ANIMATION
+================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 800px) {
+
+  .editor-page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid #1e293b;
+  }
+
+  .sidebar button:last-child {
+    margin-top: 10px;
+  }
+
+  .editor-wrapper {
+    padding: 15px;
+  }
+
+  form {
+    width: calc(100% - 30px);
+    padding: 30px 25px;
+  }
+}
